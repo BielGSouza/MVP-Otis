@@ -1,0 +1,72 @@
+
+# ==============================
+# Sistema operacional
+# ==============================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==============================
+# Editores e IDEs
+# ==============================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ==============================
+# Node.js / React / Vite
+# ==============================
+node_modules/
+Frontend/node_modules/
+Frontend/dist/
+Frontend/.vite/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# ==============================
+# Python / FastAPI
+# ==============================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+venv/
+.venv/
+env/
+
+# ==============================
+# Variáveis de ambiente e segredos
+# ==============================
+.env
+.env.*
+!.env.example
+
+# ==============================
+# Logs
+# ==============================
+*.log
+logs/
+
+# ==============================
+# Banco de dados local
+# ==============================
+*.sqlite
+*.sqlite3
+*.db
+
+# ==============================
+# Arquivos temporários
+# ==============================
+*.tmp
+*.bak
+*.orig
+
+# ==============================
+# Builds e cobertura
+# ==============================
+coverage/
+htmlcov/
