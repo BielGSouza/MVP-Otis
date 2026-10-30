@@ -1,0 +1,10 @@
+{
+  "name": "mvp_otis_backend",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Backend do MVP Otis - controle de sobrecarga do elevador",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
