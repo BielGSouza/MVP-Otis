@@ -1,0 +1,486 @@
+
+[
+  {
+    "id": 1,
+    "problema": "Porta não abre",
+    "categoria": "Operacional",
+    "gravidade": "Alta",
+    "descricao": "A porta do elevador não abre ao chegar no andar.",
+    "possiveisCausas": [
+      "Falha no sensor da porta",
+      "Defeito no motor da porta",
+      "Problema no sistema de controle"
+    ],
+    "consequencias": [
+      "Passageiros impedidos de sair",
+      "Elevador fora de serviço"
+    ]
+  },
+  {
+    "id": 2,
+    "problema": "Porta não fecha",
+    "categoria": "Operacional",
+    "gravidade": "Alta",
+    "descricao": "A porta permanece aberta e impede o funcionamento normal.",
+    "possiveisCausas": [
+      "Obstrução na porta",
+      "Falha no sensor",
+      "Defeito no mecanismo de fechamento"
+    ],
+    "consequencias": [
+      "Elevador não inicia a viagem",
+      "Interrupção do serviço"
+    ]
+  },
+  {
+    "id": 3,
+    "problema": "Elevador parado entre andares",
+    "categoria": "Operacional",
+    "gravidade": "Critica",
+    "descricao": "O elevador interrompe seu movimento antes de chegar ao andar.",
+    "possiveisCausas": [
+      "Falha elétrica",
+      "Falha no sistema de controle",
+      "Ativação de proteção de segurança"
+    ],
+    "consequencias": [
+      "Passageiros podem ficar presos",
+      "Necessidade de atendimento técnico"
+    ]
+  },
+  {
+    "id": 4,
+    "problema": "Botão não responde",
+    "categoria": "Operacional",
+    "gravidade": "Media",
+    "descricao": "O botão de seleção de andar não responde ao comando.",
+    "possiveisCausas": [
+      "Desgaste do botão",
+      "Falha no circuito eletrônico",
+      "Problema de comunicação"
+    ],
+    "consequencias": [
+      "Dificuldade para selecionar andares",
+      "Funcionamento limitado"
+    ]
+  },
+  {
+    "id": 5,
+    "problema": "Elevador não atende chamadas",
+    "categoria": "Operacional",
+    "gravidade": "Media",
+    "descricao": "O elevador não responde às chamadas realizadas nos andares.",
+    "possiveisCausas": [
+      "Falha no painel de chamadas",
+      "Problema no controlador",
+      "Falha de comunicação"
+    ],
+    "consequencias": [
+      "Aumento do tempo de espera",
+      "Interrupção parcial do serviço"
+    ]
+  },
+  {
+    "id": 6,
+    "problema": "Vibração excessiva",
+    "categoria": "Mecanica",
+    "gravidade": "Alta",
+    "descricao": "O elevador apresenta vibrações acima do normal durante o movimento.",
+    "possiveisCausas": [
+      "Desgaste de componentes",
+      "Desalinhamento mecânico",
+      "Problemas nas guias"
+    ],
+    "consequencias": [
+      "Desconforto dos passageiros",
+      "Possível desgaste acelerado"
+    ]
+  },
+  {
+    "id": 7,
+    "problema": "Ruídos anormais",
+    "categoria": "Mecanica",
+    "gravidade": "Media",
+    "descricao": "O elevador apresenta barulhos incomuns durante o funcionamento.",
+    "possiveisCausas": [
+      "Desgaste de rolamentos",
+      "Atrito entre componentes",
+      "Peças desalinhadas"
+    ],
+    "consequencias": [
+      "Desconforto dos usuários",
+      "Possível indicação de falha mecânica"
+    ]
+  },
+  {
+    "id": 8,
+    "problema": "Desnivelamento da cabine",
+    "categoria": "Mecanica",
+    "gravidade": "Alta",
+    "descricao": "A cabine para acima ou abaixo do nível do andar.",
+    "possiveisCausas": [
+      "Falha no sensor de nivelamento",
+      "Problema no sistema de controle",
+      "Falha no sistema de acionamento"
+    ],
+    "consequencias": [
+      "Risco de tropeços e quedas",
+      "Dificuldade de entrada e saída"
+    ]
+  },
+  {
+    "id": 9,
+    "problema": "Falha no mecanismo das portas",
+    "categoria": "Mecanica",
+    "gravidade": "Alta",
+    "descricao": "O mecanismo responsável pela movimentação das portas apresenta defeito.",
+    "possiveisCausas": [
+      "Desgaste das peças",
+      "Desalinhamento",
+      "Falha no acionamento"
+    ],
+    "consequencias": [
+      "Portas podem não funcionar",
+      "Elevador pode ficar indisponível"
+    ]
+  },
+  {
+    "id": 10,
+    "problema": "Desgaste de rolamentos",
+    "categoria": "Mecanica",
+    "gravidade": "Alta",
+    "descricao": "Componentes de rolamento apresentam desgaste excessivo.",
+    "possiveisCausas": [
+      "Uso prolongado",
+      "Lubrificação inadequada",
+      "Desalinhamento"
+    ],
+    "consequencias": [
+      "Aumento de ruídos",
+      "Vibrações",
+      "Possível falha mecânica"
+    ]
+  },
+  {
+    "id": 11,
+    "problema": "Falta de energia",
+    "categoria": "Eletrica",
+    "gravidade": "Alta",
+    "descricao": "O elevador perde a alimentação elétrica necessária para funcionar.",
+    "possiveisCausas": [
+      "Interrupção no fornecimento de energia",
+      "Problema na instalação elétrica",
+      "Falha na alimentação do equipamento"
+    ],
+    "consequencias": [
+      "Elevador fora de serviço",
+      "Possível retenção de passageiros"
+    ]
+  },
+  {
+    "id": 12,
+    "problema": "Curto-circuito",
+    "categoria": "Eletrica",
+    "gravidade": "Critica",
+    "descricao": "Ocorre uma falha elétrica envolvendo contato indevido entre condutores.",
+    "possiveisCausas": [
+      "Isolamento danificado",
+      "Umidade",
+      "Falha em componentes elétricos"
+    ],
+    "consequencias": [
+      "Danos aos equipamentos",
+      "Possível risco de incêndio",
+      "Interrupção do funcionamento"
+    ]
+  },
+  {
+    "id": 13,
+    "problema": "Falha no painel de controle",
+    "categoria": "Eletrica",
+    "gravidade": "Alta",
+    "descricao": "O painel responsável pelo controle do elevador apresenta defeito.",
+    "possiveisCausas": [
+      "Falha eletrônica",
+      "Problema de alimentação",
+      "Defeito em componentes"
+    ],
+    "consequencias": [
+      "Comandos podem não funcionar",
+      "Elevador pode ficar indisponível"
+    ]
+  },
+  {
+    "id": 14,
+    "problema": "Falha nos sensores",
+    "categoria": "Eletrica",
+    "gravidade": "Alta",
+    "descricao": "Um ou mais sensores apresentam leituras incorretas ou deixam de funcionar.",
+    "possiveisCausas": [
+      "Sensor danificado",
+      "Falha de comunicação",
+      "Problema elétrico"
+    ],
+    "consequencias": [
+      "Funcionamento irregular",
+      "Ativação de sistemas de proteção"
+    ]
+  },
+  {
+    "id": 15,
+    "problema": "Falha no inversor de frequência",
+    "categoria": "Eletrica",
+    "gravidade": "Alta",
+    "descricao": "O equipamento responsável pelo controle do motor apresenta falha.",
+    "possiveisCausas": [
+      "Sobreaquecimento",
+      "Falha eletrônica",
+      "Problema na alimentação"
+    ],
+    "consequencias": [
+      "Interrupção do movimento",
+      "Funcionamento irregular"
+    ]
+  },
+  {
+    "id": 16,
+    "problema": "Passageiros presos",
+    "categoria": "Seguranca",
+    "gravidade": "Critica",
+    "descricao": "Pessoas ficam retidas dentro da cabine sem conseguir sair normalmente.",
+    "possiveisCausas": [
+      "Falha elétrica",
+      "Parada inesperada",
+      "Defeito no sistema de portas"
+    ],
+    "consequencias": [
+      "Necessidade de atendimento de emergência",
+      "Risco à segurança dos passageiros"
+    ]
+  },
+  {
+    "id": 17,
+    "problema": "Alarme de emergência não funciona",
+    "categoria": "Seguranca",
+    "gravidade": "Critica",
+    "descricao": "O botão ou dispositivo de alarme não funciona corretamente.",
+    "possiveisCausas": [
+      "Falha elétrica",
+      "Defeito no botão",
+      "Problema no circuito do alarme"
+    ],
+    "consequencias": [
+      "Dificuldade para solicitar ajuda",
+      "Atraso no atendimento"
+    ]
+  },
+  {
+    "id": 18,
+    "problema": "Interfone de emergência não funciona",
+    "categoria": "Seguranca",
+    "gravidade": "Critica",
+    "descricao": "O sistema de comunicação de emergência apresenta defeito.",
+    "possiveisCausas": [
+      "Falha de comunicação",
+      "Defeito no equipamento",
+      "Problema de alimentação"
+    ],
+    "consequencias": [
+      "Passageiros não conseguem se comunicar",
+      "Dificuldade no atendimento"
+    ]
+  },
+  {
+    "id": 19,
+    "problema": "Falha na detecção de obstáculos",
+    "categoria": "Seguranca",
+    "gravidade": "Critica",
+    "descricao": "O sistema da porta não detecta corretamente pessoas ou objetos.",
+    "possiveisCausas": [
+      "Sensor danificado",
+      "Falha eletrônica",
+      "Problema de alinhamento"
+    ],
+    "consequencias": [
+      "Risco de contato com a porta",
+      "Possibilidade de acidentes"
+    ]
+  },
+  {
+    "id": 20,
+    "problema": "Sobrecarga de peso",
+    "categoria": "Seguranca",
+    "gravidade": "Alta",
+    "descricao": "O peso dentro da cabine ultrapassa o limite permitido.",
+    "possiveisCausas": [
+      "Excesso de passageiros",
+      "Transporte de carga acima do limite"
+    ],
+    "consequencias": [
+      "Bloqueio da movimentação",
+      "Ativação do alarme de sobrecarga"
+    ]
+  },
+  {
+    "id": 21,
+    "problema": "Falha no freio",
+    "categoria": "Mecanica",
+    "gravidade": "Critica",
+    "descricao": "O sistema de frenagem apresenta funcionamento inadequado.",
+    "possiveisCausas": [
+      "Desgaste de componentes",
+      "Falha no acionamento",
+      "Problema mecânico"
+    ],
+    "consequencias": [
+      "Comprometimento da segurança",
+      "Necessidade de retirada de serviço"
+    ]
+  },
+  {
+    "id": 22,
+    "problema": "Superaquecimento do motor",
+    "categoria": "Mecanica",
+    "gravidade": "Alta",
+    "descricao": "O motor apresenta temperatura acima da faixa normal de operação.",
+    "possiveisCausas": [
+      "Problema de ventilação",
+      "Sobrecarga de funcionamento",
+      "Falha em componentes"
+    ],
+    "consequencias": [
+      "Parada do equipamento",
+      "Danos ao motor"
+    ]
+  },
+  {
+    "id": 23,
+    "problema": "Falha na iluminação da cabine",
+    "categoria": "Eletrica",
+    "gravidade": "Media",
+    "descricao": "A iluminação interna da cabine apresenta defeito.",
+    "possiveisCausas": [
+      "Lâmpadas danificadas",
+      "Falha no circuito",
+      "Problema na alimentação"
+    ],
+    "consequencias": [
+      "Baixa visibilidade",
+      "Desconforto dos passageiros"
+    ]
+  },
+  {
+    "id": 24,
+    "problema": "Falha na iluminação de emergência",
+    "categoria": "Seguranca",
+    "gravidade": "Critica",
+    "descricao": "A iluminação de emergência não funciona quando necessária.",
+    "possiveisCausas": [
+      "Bateria danificada",
+      "Falha no circuito",
+      "Defeito no sistema de emergência"
+    ],
+    "consequencias": [
+      "Cabine sem iluminação em emergências",
+      "Maior dificuldade para os passageiros"
+    ]
+  },
+  {
+    "id": 25,
+    "problema": "Elevador apresenta movimentos bruscos",
+    "categoria": "Operacional",
+    "gravidade": "Alta",
+    "descricao": "A cabine apresenta acelerações ou desacelerações fora do padrão.",
+    "possiveisCausas": [
+      "Falha no controle de velocidade",
+      "Problema no acionamento",
+      "Defeito no sistema de controle"
+    ],
+    "consequencias": [
+      "Desconforto dos passageiros",
+      "Risco de quedas"
+    ]
+  },
+  {
+    "id": 26,
+    "problema": "Falha no indicador de andares",
+    "categoria": "Operacional",
+    "gravidade": "Baixa",
+    "descricao": "O painel não mostra corretamente o andar em que o elevador está.",
+    "possiveisCausas": [
+      "Defeito no display",
+      "Falha de comunicação",
+      "Problema eletrônico"
+    ],
+    "consequencias": [
+      "Informação incorreta aos passageiros",
+      "Dificuldade de orientação"
+    ]
+  },
+  {
+    "id": 27,
+    "problema": "Falha na ventilação da cabine",
+    "categoria": "Eletrica",
+    "gravidade": "Media",
+    "descricao": "O sistema de ventilação da cabine deixa de funcionar corretamente.",
+    "possiveisCausas": [
+      "Ventilador danificado",
+      "Falha elétrica",
+      "Obstrução da ventilação"
+    ],
+    "consequencias": [
+      "Desconforto térmico",
+      "Ventilação inadequada"
+    ]
+  },
+  {
+    "id": 28,
+    "problema": "Falha no sistema de nivelamento",
+    "categoria": "Operacional",
+    "gravidade": "Alta",
+    "descricao": "O elevador apresenta dificuldade para parar corretamente no andar.",
+    "possiveisCausas": [
+      "Sensor de posição defeituoso",
+      "Falha no controlador",
+      "Problema no acionamento"
+    ],
+    "consequencias": [
+      "Desnivelamento da cabine",
+      "Risco de tropeços"
+    ]
+  },
+  {
+    "id": 29,
+    "problema": "Infiltração de água",
+    "categoria": "Seguranca",
+    "gravidade": "Alta",
+    "descricao": "Água entra em áreas ou componentes do sistema do elevador.",
+    "possiveisCausas": [
+      "Vazamento hidráulico do edifício",
+      "Infiltração estrutural",
+      "Alagamento"
+    ],
+    "consequencias": [
+      "Danos elétricos",
+      "Risco de curto-circuito",
+      "Interrupção do serviço"
+    ]
+  },
+  {
+    "id": 30,
+    "problema": "Falha no sistema de comunicação",
+    "categoria": "Eletrica",
+    "gravidade": "Alta",
+    "descricao": "Ocorre uma falha na comunicação entre componentes eletrônicos do elevador.",
+    "possiveisCausas": [
+      "Problema no cabeamento",
+      "Falha nos módulos eletrônicos",
+      "Interferência na comunicação"
+    ],
+    "consequencias": [
+      "Comandos não executados",
+      "Funcionamento irregular",
+      "Possível parada do elevador"
+    ]
+  }
+]
