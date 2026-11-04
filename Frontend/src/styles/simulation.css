@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+.txt-init-page{
+    font-size: 12px;
+    color: var(--cyan);
+    font-weight: 700;
+    
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 10px 0px;
+}
+
+.txt-init-page::before{
+    content: "";
+    width: 20px;
+    height: 1.6px;
+    background-color: var(--cyan);
+    display: block;
+}
+
+.situation-zone {
+    padding-top: 30px;
+}
+
+.situations {
+    padding: 16px;
+    display: flex;
+    gap: 15px;
+    overflow-x: scroll;
+    width: 100%;
+}
+
+/* Largura da scrollbar (Chrome, Edge e Safari) */
+.situations::-webkit-scrollbar {
+    height: 8px;
+}
+
+/* Fundo da scrollbar */
+.situations::-webkit-scrollbar-track {
+    background: #dcdcdc;
+    border-radius: 10px;
+}
+
+/* Parte que você arrasta */
+.situations::-webkit-scrollbar-thumb {
+    background: #00c2f7;
+    border-radius: 10px;
+}
+
+/* Quando passa o mouse */
+.situations::-webkit-scrollbar-thumb:hover {
+    background: #009ac5;
+}
+
+.situation{
+    padding: 18px 28px;
+    border: 2px solid #00c2f7;
+    width: 350px;
+    border-radius: 12px;
+    background-image: linear-gradient(45deg, #2267c8, #0f4da4);
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.171);
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.off {
+    background-image: linear-gradient(45deg, #575757, #3d3d3d);
+    border: none;
+}
+
+.off > p{
+    color: rgb(172, 172, 172);
+}
+
+.off .icon-situation {
+    background-color: rgb(96, 96, 96);
+}
+
+.icon-situation{
+    width: 30px;
+    height: 30px;
+    background-color: #0b3c80;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 7px;
+}
+
+.title-card-situation {
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 7px;
+    color: white;
+}
+
+.txt-card-situation {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--gray);
+}
+
+.simulation-zone {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 15px 0px;
+}
+
+.parameters-zone {
+    width: 100%;
+
+    border-radius: 16px;
+    border: 2px solid #00c2f7;
+
+    padding: 10px;
+}
+
+.title-parameter {
+    padding-bottom: 10px;
+}

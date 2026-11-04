@@ -5,6 +5,7 @@ import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import Dashboard from './pages/Dashboard.jsx'
+import Simulation from './pages/Simulation.jsx'
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
       {
         path: '/dashboard', 
         element: <Dashboard />
+      },
+      {
+        path: '/simulation',
+        element: <Simulation />
       }
     ],
   }

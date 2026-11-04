@@ -9,6 +9,7 @@
 
     background-color: var(--very-dark-blue);
     color: white;
+    border-right: 1px solid var(--light-gray);
 
     transition: 0.4s;
 }
@@ -18,7 +19,20 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    cursor: pointer;
 }
 
-.icon {
+.itens-navigation > p {
+    padding-left: 7px;
+    font-weight: 300;
+}
+
+.itens-navigation:hover {
+    background-color: var(--second-blue);
+    transition: 0.4s;
+}
+
+.style-link{
+    text-decoration: none;
+    color: white;
 }
