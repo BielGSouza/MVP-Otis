@@ -1,0 +1,1950 @@
+{
+  "elevadores": [
+    {
+      "id": 1,
+      "nome": "Elevador A",
+      "localizacao": "Bloco A",
+      "limiteKg": 600,
+      "pesoAtual": 87999999,
+      "status": "SOBRECARGA",
+      "podeMover": false,
+      "alarme": true
+    },
+    {
+      "id": 2,
+      "nome": "Elevador B",
+      "localizacao": "Bloco A",
+      "limiteKg": 600,
+      "pesoAtual": 0,
+      "status": "NORMAL",
+      "podeMover": true,
+      "alarme": false
+    },
+    {
+      "id": 3,
+      "nome": "Elevador C",
+      "localizacao": "Bloco B",
+      "limiteKg": 600,
+      "pesoAtual": 0,
+      "status": "NORMAL",
+      "podeMover": true,
+      "alarme": false
+    }
+  ],
+  "tiposProblema": [
+    {
+      "id": 1,
+      "problema": "Porta não abre",
+      "categoria": "Funcionamento",
+      "gravidade": "Alta",
+      "descricao": "A porta do elevador não abre ao chegar no andar.",
+      "possiveisCausas": [
+        "Falha no sensor da porta",
+        "Defeito no motor da porta",
+        "Problema no sistema de controle"
+      ],
+      "consequencias": [
+        "Passageiros impedidos de sair",
+        "Elevador fora de serviço"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Sinalizar o elevador como indisponível e confirmar se há passageiros na cabine.",
+        "passos": [
+          "Inspecionar o sensor e o fim de curso da porta",
+          "Testar o motor e o operador de porta",
+          "Conferir os parâmetros do controlador e restaurar a configuração se preciso",
+          "Fazer ciclos de abertura e fechamento antes de liberar"
+        ],
+        "equipe": "Técnico de manutenção (portas)"
+      }
+    },
+    {
+      "id": 2,
+      "problema": "Porta não fecha",
+      "categoria": "Funcionamento",
+      "gravidade": "Alta",
+      "descricao": "A porta permanece aberta e impede o funcionamento normal.",
+      "possiveisCausas": [
+        "Obstrução na porta",
+        "Falha no sensor",
+        "Defeito no mecanismo de fechamento"
+      ],
+      "consequencias": [
+        "Elevador não inicia a viagem",
+        "Interrupção do serviço"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Retirar qualquer obstrução visível e manter o elevador parado até a verificação.",
+        "passos": [
+          "Limpar e verificar a soleira e as guias da porta",
+          "Testar o sensor de fechamento e a cortina de luz",
+          "Ajustar ou substituir o mecanismo de fechamento",
+          "Validar o fechamento completo com testes de ciclo"
+        ],
+        "equipe": "Técnico de manutenção (portas)"
+      }
+    },
+    {
+      "id": 3,
+      "problema": "Elevador parado entre andares",
+      "categoria": "Funcionamento",
+      "gravidade": "Crítica",
+      "descricao": "O elevador interrompe seu movimento antes de chegar ao andar.",
+      "possiveisCausas": [
+        "Falha elétrica",
+        "Falha no sistema de controle",
+        "Ativação de proteção de segurança"
+      ],
+      "consequencias": [
+        "Passageiros podem ficar presos",
+        "Necessidade de atendimento técnico"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Acionar imediatamente a equipe autorizada e manter contato com os passageiros pelo interfone.",
+        "passos": [
+          "Verificar a alimentação elétrica e o estado do controlador",
+          "Checar qual proteção de segurança foi ativada e o motivo",
+          "Fazer o resgate dos passageiros conforme o procedimento da equipe",
+          "Liberar somente após teste completo de viagem"
+        ],
+        "equipe": "Equipe de resgate e manutenção autorizada"
+      }
+    },
+    {
+      "id": 4,
+      "problema": "Botão não responde",
+      "categoria": "Funcionamento",
+      "gravidade": "Média",
+      "descricao": "O botão de seleção de andar não responde ao comando.",
+      "possiveisCausas": [
+        "Desgaste do botão",
+        "Falha no circuito eletrônico",
+        "Problema de comunicação"
+      ],
+      "consequencias": [
+        "Dificuldade para selecionar andares",
+        "Funcionamento limitado"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Orientar os usuários a usar outro elevador e registrar o botão afetado.",
+        "passos": [
+          "Testar a continuidade e o contato do botão",
+          "Verificar o cabo e a placa de comunicação da botoeira",
+          "Substituir o botão ou o módulo com defeito",
+          "Testar todos os andares após o reparo"
+        ],
+        "equipe": "Técnico de manutenção (eletrônica)"
+      }
+    },
+    {
+      "id": 5,
+      "problema": "Elevador não atende chamadas",
+      "categoria": "Funcionamento",
+      "gravidade": "Média",
+      "descricao": "O elevador não responde às chamadas realizadas nos andares.",
+      "possiveisCausas": [
+        "Falha no painel de chamadas",
+        "Problema no controlador",
+        "Falha de comunicação"
+      ],
+      "consequencias": [
+        "Aumento do tempo de espera",
+        "Interrupção parcial do serviço"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Verificar se o elevador está em modo de manutenção, inspeção ou fora de serviço.",
+        "passos": [
+          "Testar os botões de chamada de pavimento",
+          "Verificar a comunicação entre o painel de chamadas e o controlador",
+          "Reiniciar o controlador e checar falhas registradas",
+          "Validar o atendimento de chamadas em vários andares"
+        ],
+        "equipe": "Técnico de manutenção (controle)"
+      }
+    },
+    {
+      "id": 6,
+      "problema": "Vibração excessiva",
+      "categoria": "Mecânicos",
+      "gravidade": "Alta",
+      "descricao": "O elevador apresenta vibrações acima do normal durante o movimento.",
+      "possiveisCausas": [
+        "Desgaste de componentes",
+        "Desalinhamento mecânico",
+        "Problemas nas guias"
+      ],
+      "consequencias": [
+        "Desconforto dos passageiros",
+        "Possível desgaste acelerado"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Reduzir o uso do elevador e agendar inspeção em curto prazo.",
+        "passos": [
+          "Inspecionar guias, roldanas e rolamentos",
+          "Verificar o alinhamento das guias e a fixação dos componentes",
+          "Substituir peças desgastadas e rebalancear se necessário",
+          "Medir a vibração após o reparo para confirmar a correção"
+        ],
+        "equipe": "Técnico de manutenção (mecânica)"
+      }
+    },
+    {
+      "id": 7,
+      "problema": "Ruídos anormais",
+      "categoria": "Mecânicos",
+      "gravidade": "Média",
+      "descricao": "O elevador apresenta barulhos incomuns durante o funcionamento.",
+      "possiveisCausas": [
+        "Desgaste de rolamentos",
+        "Atrito entre componentes",
+        "Peças desalinhadas"
+      ],
+      "consequencias": [
+        "Desconforto dos usuários",
+        "Possível indicação de falha mecânica"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Registrar o local e o momento em que o ruído ocorre.",
+        "passos": [
+          "Localizar a origem do ruído (casa de máquinas, poço, cabine ou portas)",
+          "Lubrificar guias e conferir o aperto de parafusos e fixações",
+          "Verificar rolamentos, polias e freio",
+          "Substituir o componente que originou o ruído"
+        ],
+        "equipe": "Técnico de manutenção (mecânica)"
+      }
+    },
+    {
+      "id": 8,
+      "problema": "Desnivelamento da cabine",
+      "categoria": "Mecânicos",
+      "gravidade": "Alta",
+      "descricao": "A cabine para acima ou abaixo do nível do andar.",
+      "possiveisCausas": [
+        "Falha no sensor de nivelamento",
+        "Problema no sistema de controle",
+        "Falha no sistema de acionamento"
+      ],
+      "consequencias": [
+        "Risco de tropeços e quedas",
+        "Dificuldade de entrada e saída"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Sinalizar o degrau de piso e avisar os usuários até a correção.",
+        "passos": [
+          "Verificar o sistema de nivelamento e os sensores de andar",
+          "Conferir o freio e a tração",
+          "Recalibrar o nivelamento nos andares afetados",
+          "Medir o desnível após o ajuste"
+        ],
+        "equipe": "Técnico de manutenção (mecânica e controle)"
+      }
+    },
+    {
+      "id": 9,
+      "problema": "Falha no mecanismo das portas",
+      "categoria": "Mecânicos",
+      "gravidade": "Alta",
+      "descricao": "O mecanismo responsável pela movimentação das portas apresenta defeito.",
+      "possiveisCausas": [
+        "Desgaste das peças",
+        "Desalinhamento",
+        "Falha no acionamento"
+      ],
+      "consequencias": [
+        "Portas podem não funcionar",
+        "Elevador pode ficar indisponível"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Tirar o elevador de operação se houver risco de a porta se soltar ou prender.",
+        "passos": [
+          "Inspecionar as roldanas, guias, correias e engates das portas",
+          "Lubrificar e ajustar a folga do conjunto",
+          "Substituir as peças desgastadas ou quebradas",
+          "Testar a abertura e o fechamento em todos os andares"
+        ],
+        "equipe": "Técnico de manutenção (portas)"
+      }
+    },
+    {
+      "id": 10,
+      "problema": "Desgaste de rolamentos",
+      "categoria": "Mecânicos",
+      "gravidade": "Alta",
+      "descricao": "Componentes de rolamento apresentam desgaste excessivo.",
+      "possiveisCausas": [
+        "Uso prolongado",
+        "Lubrificação inadequada",
+        "Desalinhamento"
+      ],
+      "consequencias": [
+        "Aumento de ruídos",
+        "Vibrações",
+        "Possível falha mecânica"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Programar a substituição antes de ocorrer travamento.",
+        "passos": [
+          "Inspecionar o estado dos rolamentos e medir ruído e temperatura",
+          "Verificar a lubrificação e o alinhamento do eixo",
+          "Substituir os rolamentos desgastados",
+          "Definir um intervalo de inspeção preventiva"
+        ],
+        "equipe": "Técnico de manutenção (mecânica)"
+      }
+    },
+    {
+      "id": 11,
+      "problema": "Falta de energia",
+      "categoria": "Elétricos",
+      "gravidade": "Alta",
+      "descricao": "O elevador perde a alimentação elétrica necessária para funcionar.",
+      "possiveisCausas": [
+        "Interrupção no fornecimento de energia",
+        "Problema na instalação elétrica",
+        "Falha na alimentação do equipamento"
+      ],
+      "consequencias": [
+        "Elevador fora de serviço",
+        "Possível retenção de passageiros"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Confirmar se a falta de energia é do prédio ou do elevador e verificar se há pessoas na cabine.",
+        "passos": [
+          "Verificar disjuntores, quadro de força e fusíveis",
+          "Checar o gerador ou a bateria de emergência, se existirem",
+          "Inspecionar o inversor e a fonte do controlador",
+          "Religar com acompanhamento e testar uma viagem completa"
+        ],
+        "equipe": "Eletricista autorizado e manutenção"
+      }
+    },
+    {
+      "id": 12,
+      "problema": "Curto-circuito",
+      "categoria": "Elétricos",
+      "gravidade": "Crítica",
+      "descricao": "Ocorre uma falha elétrica envolvendo contato indevido entre condutores.",
+      "possiveisCausas": [
+        "Isolamento danificado",
+        "Umidade",
+        "Falha em componentes elétricos"
+      ],
+      "consequencias": [
+        "Danos aos equipamentos",
+        "Possível risco de incêndio",
+        "Interrupção do funcionamento"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Desligar a alimentação do elevador e isolar a área até a avaliação.",
+        "passos": [
+          "Identificar o circuito afetado e a origem do curto",
+          "Inspecionar cabos, isolação e conexões",
+          "Substituir os componentes danificados e revisar as proteções",
+          "Medir isolação e testar antes de religar"
+        ],
+        "equipe": "Eletricista autorizado"
+      }
+    },
+    {
+      "id": 13,
+      "problema": "Falha no painel de controle",
+      "categoria": "Elétricos",
+      "gravidade": "Alta",
+      "descricao": "O painel responsável pelo controle do elevador apresenta defeito.",
+      "possiveisCausas": [
+        "Falha eletrônica",
+        "Problema de alimentação",
+        "Defeito em componentes"
+      ],
+      "consequencias": [
+        "Comandos podem não funcionar",
+        "Elevador pode ficar indisponível"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Colocar o elevador em modo seguro e registrar os códigos de falha exibidos.",
+        "passos": [
+          "Ler o histórico de falhas do painel de controle",
+          "Verificar a alimentação, conexões e placas",
+          "Atualizar ou restaurar o firmware e a configuração",
+          "Substituir a placa danificada, se for o caso"
+        ],
+        "equipe": "Técnico de manutenção (controle)"
+      }
+    },
+    {
+      "id": 14,
+      "problema": "Falha nos sensores",
+      "categoria": "Elétricos",
+      "gravidade": "Alta",
+      "descricao": "Um ou mais sensores apresentam leituras incorretas ou deixam de funcionar.",
+      "possiveisCausas": [
+        "Sensor danificado",
+        "Falha de comunicação",
+        "Problema elétrico"
+      ],
+      "consequencias": [
+        "Funcionamento irregular",
+        "Ativação de sistemas de proteção"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Manter o elevador parado se o sensor afetado for de segurança.",
+        "passos": [
+          "Identificar o sensor com defeito pelo diagnóstico do controlador",
+          "Limpar, realinhar e verificar a cablagem do sensor",
+          "Substituir o sensor se não responder",
+          "Testar a função de segurança após a troca"
+        ],
+        "equipe": "Técnico de manutenção (eletrônica)"
+      }
+    },
+    {
+      "id": 15,
+      "problema": "Falha no inversor de frequência",
+      "categoria": "Elétricos",
+      "gravidade": "Alta",
+      "descricao": "O equipamento responsável pelo controle do motor apresenta falha.",
+      "possiveisCausas": [
+        "Sobreaquecimento",
+        "Falha eletrônica",
+        "Problema na alimentação"
+      ],
+      "consequencias": [
+        "Interrupção do movimento",
+        "Funcionamento irregular"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Reduzir a carga de uso e evitar reiniciar o inversor repetidamente.",
+        "passos": [
+          "Ler os códigos de falha do inversor",
+          "Verificar a ventilação, a temperatura e as conexões de potência",
+          "Conferir os parâmetros de configuração do motor",
+          "Reparar ou substituir o inversor"
+        ],
+        "equipe": "Técnico de manutenção (elétrica)"
+      }
+    },
+    {
+      "id": 16,
+      "problema": "Passageiros presos",
+      "categoria": "Segurança",
+      "gravidade": "Crítica",
+      "descricao": "Pessoas ficam retidas dentro da cabine sem conseguir sair normalmente.",
+      "possiveisCausas": [
+        "Falha elétrica",
+        "Parada inesperada",
+        "Defeito no sistema de portas"
+      ],
+      "consequencias": [
+        "Necessidade de atendimento de emergência",
+        "Risco à segurança dos passageiros"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Acionar imediatamente a equipe de resgate, manter contato com os passageiros e orientá-los a esperar.",
+        "passos": [
+          "Confirmar o número de pessoas e o estado de saúde delas",
+          "Executar o resgate somente por profissional autorizado",
+          "Identificar a causa da parada após o resgate",
+          "Liberar o elevador apenas depois de inspeção completa"
+        ],
+        "equipe": "Equipe de resgate autorizada"
+      }
+    },
+    {
+      "id": 17,
+      "problema": "Alarme de emergência não funciona",
+      "categoria": "Segurança",
+      "gravidade": "Crítica",
+      "descricao": "O botão ou dispositivo de alarme não funciona corretamente.",
+      "possiveisCausas": [
+        "Falha elétrica",
+        "Defeito no botão",
+        "Problema no circuito do alarme"
+      ],
+      "consequencias": [
+        "Dificuldade para solicitar ajuda",
+        "Atraso no atendimento"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Informar os usuários do risco e manter o elevador fora de serviço até o reparo.",
+        "passos": [
+          "Testar o botão de alarme e a campainha",
+          "Verificar a fiação e a fonte de alimentação do alarme",
+          "Substituir o botão ou a campainha com defeito",
+          "Testar o alarme e registrar o resultado"
+        ],
+        "equipe": "Técnico de manutenção (segurança)"
+      }
+    },
+    {
+      "id": 18,
+      "problema": "Interfone de emergência não funciona",
+      "categoria": "Segurança",
+      "gravidade": "Crítica",
+      "descricao": "O sistema de comunicação de emergência apresenta defeito.",
+      "possiveisCausas": [
+        "Falha de comunicação",
+        "Defeito no equipamento",
+        "Problema de alimentação"
+      ],
+      "consequencias": [
+        "Passageiros não conseguem se comunicar",
+        "Dificuldade no atendimento"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Manter o elevador fora de serviço se não houver outro meio de comunicação com a cabine.",
+        "passos": [
+          "Testar o interfone e a linha de comunicação",
+          "Verificar a alimentação, o microfone e o alto-falante",
+          "Reparar ou substituir o módulo de comunicação",
+          "Fazer chamada de teste com a central"
+        ],
+        "equipe": "Técnico de manutenção (comunicação)"
+      }
+    },
+    {
+      "id": 19,
+      "problema": "Falha na detecção de obstáculos",
+      "categoria": "Segurança",
+      "gravidade": "Crítica",
+      "descricao": "O sistema da porta não detecta corretamente pessoas ou objetos.",
+      "possiveisCausas": [
+        "Sensor danificado",
+        "Falha eletrônica",
+        "Problema de alinhamento"
+      ],
+      "consequencias": [
+        "Risco de contato com a porta",
+        "Possibilidade de acidentes"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Retirar o elevador de operação, pois há risco de fechamento sobre pessoas ou objetos.",
+        "passos": [
+          "Inspecionar a cortina de luz e os sensores de obstáculo",
+          "Limpar e realinhar os componentes ópticos",
+          "Substituir os sensores defeituosos",
+          "Testar com obstáculo de prova em vários andares"
+        ],
+        "equipe": "Técnico de manutenção (segurança)"
+      }
+    },
+    {
+      "id": 20,
+      "problema": "Sobrecarga de peso",
+      "categoria": "Segurança",
+      "gravidade": "Alta",
+      "descricao": "O peso dentro da cabine ultrapassa o limite permitido.",
+      "possiveisCausas": [
+        "Excesso de passageiros",
+        "Transporte de carga acima do limite"
+      ],
+      "consequencias": [
+        "Bloqueio da movimentação",
+        "Ativação do alarme de sobrecarga"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Orientar os passageiros a reduzir a carga e manter a porta aberta até o peso voltar ao normal.",
+        "passos": [
+          "Verificar a calibração do sensor de carga",
+          "Conferir o limite de peso configurado",
+          "Revisar o aviso sonoro e visual de sobrecarga",
+          "Orientar os usuários sobre a capacidade máxima"
+        ],
+        "equipe": "Técnico de manutenção e administração do prédio"
+      }
+    },
+    {
+      "id": 21,
+      "problema": "Falha no freio",
+      "categoria": "Mecânicos",
+      "gravidade": "Crítica",
+      "descricao": "O sistema de frenagem apresenta funcionamento inadequado.",
+      "possiveisCausas": [
+        "Desgaste de componentes",
+        "Falha no acionamento",
+        "Problema mecânico"
+      ],
+      "consequencias": [
+        "Comprometimento da segurança",
+        "Necessidade de retirada de serviço"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Retirar o elevador de operação imediatamente.",
+        "passos": [
+          "Inspecionar as pastilhas e o estado do freio",
+          "Medir o desgaste e a força de frenagem",
+          "Substituir ou ajustar as peças do freio",
+          "Testar a frenagem com carga antes de liberar"
+        ],
+        "equipe": "Equipe autorizada de manutenção (segurança)"
+      }
+    },
+    {
+      "id": 22,
+      "problema": "Superaquecimento do motor",
+      "categoria": "Mecânicos",
+      "gravidade": "Alta",
+      "descricao": "O motor apresenta temperatura acima da faixa normal de operação.",
+      "possiveisCausas": [
+        "Problema de ventilação",
+        "Sobrecarga de funcionamento",
+        "Falha em componentes"
+      ],
+      "consequencias": [
+        "Parada do equipamento",
+        "Danos ao motor"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Desligar o elevador para esfriar o motor e evitar danos.",
+        "passos": [
+          "Verificar a ventilação e a temperatura da casa de máquinas",
+          "Inspecionar a carga, a lubrificação e o ciclo de trabalho do motor",
+          "Reparar o sistema de ventilação ou substituir o motor, se danificado",
+          "Monitorar a temperatura nos dias seguintes"
+        ],
+        "equipe": "Técnico de manutenção (mecânica e elétrica)"
+      }
+    },
+    {
+      "id": 23,
+      "problema": "Falha na iluminação da cabine",
+      "categoria": "Elétricos",
+      "gravidade": "Média",
+      "descricao": "A iluminação interna da cabine apresenta defeito.",
+      "possiveisCausas": [
+        "Lâmpadas danificadas",
+        "Falha no circuito",
+        "Problema na alimentação"
+      ],
+      "consequencias": [
+        "Baixa visibilidade",
+        "Desconforto dos passageiros"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Avisar os usuários e verificar se a iluminação de emergência funciona.",
+        "passos": [
+          "Testar as lâmpadas e os drivers de iluminação",
+          "Verificar a alimentação da cabine",
+          "Substituir lâmpadas ou módulos com defeito",
+          "Registrar a troca no histórico do elevador"
+        ],
+        "equipe": "Técnico de manutenção (elétrica)"
+      }
+    },
+    {
+      "id": 24,
+      "problema": "Falha na iluminação de emergência",
+      "categoria": "Segurança",
+      "gravidade": "Crítica",
+      "descricao": "A iluminação de emergência não funciona quando necessária.",
+      "possiveisCausas": [
+        "Bateria danificada",
+        "Falha no circuito",
+        "Defeito no sistema de emergência"
+      ],
+      "consequencias": [
+        "Cabine sem iluminação em emergências",
+        "Maior dificuldade para os passageiros"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Tratar como falha de segurança e manter o elevador fora de serviço até a correção.",
+        "passos": [
+          "Testar a bateria e o módulo de emergência",
+          "Substituir a bateria ou o módulo com defeito",
+          "Simular a falta de energia para testar a iluminação",
+          "Incluir o teste periódico na rotina preventiva"
+        ],
+        "equipe": "Técnico de manutenção (segurança)"
+      }
+    },
+    {
+      "id": 25,
+      "problema": "Elevador apresenta movimentos bruscos",
+      "categoria": "Funcionamento",
+      "gravidade": "Alta",
+      "descricao": "A cabine apresenta acelerações ou desacelerações fora do padrão.",
+      "possiveisCausas": [
+        "Falha no controle de velocidade",
+        "Problema no acionamento",
+        "Defeito no sistema de controle"
+      ],
+      "consequencias": [
+        "Desconforto dos passageiros",
+        "Risco de quedas"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Reduzir o uso e registrar quando os movimentos bruscos ocorrem.",
+        "passos": [
+          "Verificar os parâmetros de aceleração e desaceleração do controlador",
+          "Inspecionar o freio, o inversor e a tração",
+          "Ajustar o perfil de viagem",
+          "Fazer viagens de teste e avaliar o conforto"
+        ],
+        "equipe": "Técnico de manutenção (controle e mecânica)"
+      }
+    },
+    {
+      "id": 26,
+      "problema": "Falha no indicador de andares",
+      "categoria": "Funcionamento",
+      "gravidade": "Baixa",
+      "descricao": "O painel não mostra corretamente o andar em que o elevador está.",
+      "possiveisCausas": [
+        "Defeito no display",
+        "Falha de comunicação",
+        "Problema eletrônico"
+      ],
+      "consequencias": [
+        "Informação incorreta aos passageiros",
+        "Dificuldade de orientação"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Informar os usuários de que o equipamento funciona, mas o indicador não mostra o andar.",
+        "passos": [
+          "Verificar a comunicação do display com o controlador",
+          "Testar o display e a fiação",
+          "Substituir o display ou o módulo com defeito",
+          "Conferir a indicação em todos os andares"
+        ],
+        "equipe": "Técnico de manutenção (eletrônica)"
+      }
+    },
+    {
+      "id": 27,
+      "problema": "Falha na ventilação da cabine",
+      "categoria": "Elétricos",
+      "gravidade": "Média",
+      "descricao": "O sistema de ventilação da cabine deixa de funcionar corretamente.",
+      "possiveisCausas": [
+        "Ventilador danificado",
+        "Falha elétrica",
+        "Obstrução da ventilação"
+      ],
+      "consequencias": [
+        "Desconforto térmico",
+        "Ventilação inadequada"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Avisar os usuários e, se houver pessoas presas, priorizar a ventilação.",
+        "passos": [
+          "Testar o ventilador e sua alimentação",
+          "Limpar as aberturas e o filtro de ar",
+          "Substituir o ventilador com defeito",
+          "Verificar a circulação de ar na cabine"
+        ],
+        "equipe": "Técnico de manutenção (elétrica)"
+      }
+    },
+    {
+      "id": 28,
+      "problema": "Falha no sistema de nivelamento",
+      "categoria": "Funcionamento",
+      "gravidade": "Alta",
+      "descricao": "O elevador apresenta dificuldade para parar corretamente no andar.",
+      "possiveisCausas": [
+        "Sensor de posição defeituoso",
+        "Falha no controlador",
+        "Problema no acionamento"
+      ],
+      "consequencias": [
+        "Desnivelamento da cabine",
+        "Risco de tropeços"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Evitar o uso até a verificação se o desnível for grande.",
+        "passos": [
+          "Inspecionar os sensores de nivelamento e os ímãs ou chapas de andar",
+          "Recalibrar o sistema em todos os andares",
+          "Substituir sensores ou componentes com defeito",
+          "Medir o desnível em todos os pavimentos"
+        ],
+        "equipe": "Técnico de manutenção (controle)"
+      }
+    },
+    {
+      "id": 29,
+      "problema": "Infiltração de água",
+      "categoria": "Segurança",
+      "gravidade": "Alta",
+      "descricao": "Água entra em áreas ou componentes do sistema do elevador.",
+      "possiveisCausas": [
+        "Vazamento hidráulico do edifício",
+        "Infiltração estrutural",
+        "Alagamento"
+      ],
+      "consequencias": [
+        "Danos elétricos",
+        "Risco de curto-circuito",
+        "Interrupção do serviço"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Desligar o elevador se houver água na cabine, no poço ou nos componentes elétricos.",
+        "passos": [
+          "Localizar a origem da infiltração com a equipe do prédio",
+          "Secar e inspecionar os componentes atingidos",
+          "Reparar a vedação ou a drenagem",
+          "Testar a isolação elétrica antes de religar"
+        ],
+        "equipe": "Eletricista autorizado e administração do prédio"
+      }
+    },
+    {
+      "id": 30,
+      "problema": "Falha no sistema de comunicação",
+      "categoria": "Elétricos",
+      "gravidade": "Alta",
+      "descricao": "Ocorre uma falha na comunicação entre componentes eletrônicos do elevador.",
+      "possiveisCausas": [
+        "Problema no cabeamento",
+        "Falha nos módulos eletrônicos",
+        "Interferência na comunicação"
+      ],
+      "consequencias": [
+        "Comandos não executados",
+        "Funcionamento irregular",
+        "Possível parada do elevador"
+      ],
+      "solucaoProposta": {
+        "acaoImediata": "Informar os usuários sobre o canal alternativo de comunicação.",
+        "passos": [
+          "Testar a rede e o módulo de comunicação",
+          "Verificar a alimentação e as conexões",
+          "Reconfigurar ou substituir o módulo com defeito",
+          "Validar o envio de alertas à central"
+        ],
+        "equipe": "Técnico de manutenção (comunicação)"
+      }
+    }
+  ],
+  "ocorrencias": [
+    {
+      "id": 1,
+      "elevadorId": 1,
+      "tipoProblemaId": 20,
+      "tipoProblema": "Sobrecarga de peso",
+      "categoria": "Segurança",
+      "descricao": "Sobrecarga detectada: 620kg (limite 600kg).",
+      "gravidade": "Alta",
+      "dataHora": "2026-11-17T17:18:01.957Z",
+      "status": "Aberta",
+      "prioritaria": true,
+      "origem": "automatica",
+      "tecnicoId": 2,
+      "tecnicoNome": "Marina Souza"
+    },
+    {
+      "id": 2,
+      "elevadorId": 1,
+      "tipoProblemaId": 2,
+      "tipoProblema": "Porta não fecha",
+      "categoria": "Funcionamento",
+      "descricao": "A porta permanece aberta e impede o funcionamento normal.",
+      "gravidade": "Alta",
+      "dataHora": "2026-11-17T18:00:38.512Z",
+      "status": "Aberta",
+      "prioritaria": false,
+      "origem": "manual",
+      "tecnicoId": 3,
+      "tecnicoNome": "Rafael Lima"
+    },
+    {
+      "id": 3,
+      "elevadorId": 1,
+      "tipoProblemaId": 8,
+      "tipoProblema": "Desnivelamento da cabine",
+      "categoria": "Mecânicos",
+      "descricao": "oiiiiiii",
+      "gravidade": "Alta",
+      "dataHora": "2026-11-17T18:30:10.949Z",
+      "status": "Aberta",
+      "prioritaria": false,
+      "origem": "manual",
+      "tecnicoId": 1,
+      "tecnicoNome": "Carlos Silva"
+    }
+  ],
+  "historico": [
+    {
+      "id": 1,
+      "ocorrenciaId": 1,
+      "elevadorId": 1,
+      "statusAnterior": null,
+      "statusNovo": "Aberta",
+      "responsavel": null,
+      "data": "2026-11-17T17:18:01.957Z"
+    },
+    {
+      "id": 2,
+      "ocorrenciaId": 2,
+      "elevadorId": 1,
+      "statusAnterior": null,
+      "statusNovo": "Aberta",
+      "responsavel": null,
+      "data": "2026-11-17T18:00:38.512Z"
+    },
+    {
+      "id": 3,
+      "ocorrenciaId": 3,
+      "elevadorId": 1,
+      "statusAnterior": null,
+      "statusNovo": "Aberta",
+      "responsavel": null,
+      "data": "2026-11-17T18:30:10.949Z"
+    }
+  ],
+  "simulacoes": [
+    {
+      "id": 1,
+      "dataHora": "2026-11-17T17:16:25.717Z",
+      "elevadorId": 1,
+      "elevador": "Elevador A",
+      "config": {
+        "quantidade": 10,
+        "perfil": "normal",
+        "categoria": null,
+        "semente": 1340868134
+      },
+      "eventos": [
+        {
+          "numero": 1,
+          "dataHora": "2026-11-17T17:42:25.716Z",
+          "andar": 2,
+          "tipoProblemaId": 28,
+          "tipoProblema": "Falha no sistema de nivelamento",
+          "categoria": "Funcionamento",
+          "gravidade": "Alta",
+          "prioritaria": false,
+          "causaSimulada": "Sensor de posição defeituoso"
+        },
+        {
+          "numero": 2,
+          "dataHora": "2026-11-17T18:39:25.716Z",
+          "andar": 2,
+          "tipoProblemaId": 24,
+          "tipoProblema": "Falha na iluminação de emergência",
+          "categoria": "Segurança",
+          "gravidade": "Crítica",
+          "prioritaria": true,
+          "causaSimulada": "Falha no circuito"
+        },
+        {
+          "numero": 3,
+          "dataHora": "2026-11-17T19:13:25.716Z",
+          "andar": 6,
+          "tipoProblemaId": 16,
+          "tipoProblema": "Passageiros presos",
+          "categoria": "Segurança",
+          "gravidade": "Crítica",
+          "prioritaria": true,
+          "causaSimulada": "Defeito no sistema de portas"
+        },
+        {
+          "numero": 4,
+          "dataHora": "2026-11-17T19:30:25.716Z",
+          "andar": 8,
+          "tipoProblemaId": 23,
+          "tipoProblema": "Falha na iluminação da cabine",
+          "categoria": "Elétricos",
+          "gravidade": "Média",
+          "prioritaria": false,
+          "causaSimulada": "Problema na alimentação"
+        },
+        {
+          "numero": 5,
+          "dataHora": "2026-11-17T20:12:25.716Z",
+          "andar": 6,
+          "tipoProblemaId": 8,
+          "tipoProblema": "Desnivelamento da cabine",
+          "categoria": "Mecânicos",
+          "gravidade": "Alta",
+          "prioritaria": false,
+          "causaSimulada": "Falha no sistema de acionamento"
+        },
+        {
+          "numero": 6,
+          "dataHora": "2026-11-17T20:37:25.716Z",
+          "andar": 10,
+          "tipoProblemaId": 18,
+          "tipoProblema": "Interfone de emergência não funciona",
+          "categoria": "Segurança",
+          "gravidade": "Crítica",
+          "prioritaria": true,
+          "causaSimulada": "Falha de comunicação"
+        },
+        {
+          "numero": 7,
+          "dataHora": "2026-11-17T21:11:25.716Z",
+          "andar": 4,
+          "tipoProblemaId": 10,
+          "tipoProblema": "Desgaste de rolamentos",
+          "categoria": "Mecânicos",
+          "gravidade": "Alta",
+          "prioritaria": false,
+          "causaSimulada": "Lubrificação inadequada"
+        },
+        {
+          "numero": 8,
+          "dataHora": "2026-11-17T21:47:25.716Z",
+          "andar": 9,
+          "tipoProblemaId": 14,
+          "tipoProblema": "Falha nos sensores",
+          "categoria": "Elétricos",
+          "gravidade": "Alta",
+          "prioritaria": false,
+          "causaSimulada": "Falha de comunicação"
+        },
+        {
+          "numero": 9,
+          "dataHora": "2026-11-17T22:45:25.716Z",
+          "andar": 8,
+          "tipoProblemaId": 25,
+          "tipoProblema": "Elevador apresenta movimentos bruscos",
+          "categoria": "Funcionamento",
+          "gravidade": "Alta",
+          "prioritaria": false,
+          "causaSimulada": "Problema no acionamento"
+        },
+        {
+          "numero": 10,
+          "dataHora": "2026-11-17T23:37:25.716Z",
+          "andar": 8,
+          "tipoProblemaId": 14,
+          "tipoProblema": "Falha nos sensores",
+          "categoria": "Elétricos",
+          "gravidade": "Alta",
+          "prioritaria": false,
+          "causaSimulada": "Problema elétrico"
+        }
+      ],
+      "relatorio": {
+        "resumo": {
+          "totalEventos": 10,
+          "porGravidade": {
+            "Baixa": 0,
+            "Média": 1,
+            "Alta": 6,
+            "Crítica": 3
+          },
+          "porCategoria": {
+            "Mecânicos": 2,
+            "Elétricos": 3,
+            "Funcionamento": 2,
+            "Segurança": 3
+          },
+          "problemasDistintos": 9,
+          "problemasRecorrentes": 0,
+          "nivelRisco": "Crítico",
+          "elevadorPodeOperar": false,
+          "conclusao": "Foram detectadas falhas que colocam passageiros em risco. O elevador não deve operar até a inspeção e a correção por equipe autorizada."
+        },
+        "recomendacoes": [
+          "Retirar o elevador de operação e acionar a equipe autorizada, pois há falha crítica (RN07)."
+        ],
+        "problemas": [
+          {
+            "tipoProblemaId": 24,
+            "problema": "Falha na iluminação de emergência",
+            "categoria": "Segurança",
+            "gravidade": "Crítica",
+            "descricao": "A iluminação de emergência não funciona quando necessária.",
+            "ocorrencias": 1,
+            "recorrente": false,
+            "causaMaisFrequente": "Falha no circuito",
+            "causasPossiveis": [
+              {
+                "causa": "Falha no circuito",
+                "ocorrencias": 1
+              },
+              {
+                "causa": "Bateria danificada",
+                "ocorrencias": 0
+              },
+              {
+                "causa": "Defeito no sistema de emergência",
+                "ocorrencias": 0
+              }
+            ],
+            "consequencias": [
+              "Cabine sem iluminação em emergências",
+              "Maior dificuldade para os passageiros"
+            ],
+            "solucaoProposta": {
+              "acaoImediata": "Tratar como falha de segurança e manter o elevador fora de serviço até a correção.",
+              "passos": [
+                "Testar a bateria e o módulo de emergência",
+                "Substituir a bateria ou o módulo com defeito",
+                "Simular a falta de energia para testar a iluminação",
+                "Incluir o teste periódico na rotina preventiva"
+              ],
+              "equipe": "Técnico de manutenção (segurança)"
+            }
+          },
+          {
+            "tipoProblemaId": 16,
+            "problema": "Passageiros presos",
+            "categoria": "Segurança",
+            "gravidade": "Crítica",
+            "descricao": "Pessoas ficam retidas dentro da cabine sem conseguir sair normalmente.",
+            "ocorrencias": 1,
+            "recorrente": false,
+            "causaMaisFrequente": "Defeito no sistema de portas",
+            "causasPossiveis": [
+              {
+                "causa": "Defeito no sistema de portas",
+                "ocorrencias": 1
+              },
+              {
+                "causa": "Falha elétrica",
+                "ocorrencias": 0
+              },
+              {
+                "causa": "Parada inesperada",
+                "ocorrencias": 0
+              }
+            ],
+            "consequencias": [
+              "Necessidade de atendimento de emergência",
+              "Risco à segurança dos passageiros"
+            ],
+            "solucaoProposta": {
+              "acaoImediata": "Acionar imediatamente a equipe de resgate, manter contato com os passageiros e orientá-los a esperar.",
+              "passos": [
+                "Confirmar o número de pessoas e o estado de saúde delas",
+                "Executar o resgate somente por profissional autorizado",
+                "Identificar a causa da parada após o resgate",
+                "Liberar o elevador apenas depois de inspeção completa"
+              ],
+              "equipe": "Equipe de resgate autorizada"
+            }
+          },
+          {
+            "tipoProblemaId": 18,
+            "problema": "Interfone de emergência não funciona",
+            "categoria": "Segurança",
+            "gravidade": "Crítica",
+            "descricao": "O sistema de comunicação de emergência apresenta defeito.",
+            "ocorrencias": 1,
+            "recorrente": false,
+            "causaMaisFrequente": "Falha de comunicação",
+            "causasPossiveis": [
+              {
+                "causa": "Falha de comunicação",
+                "ocorrencias": 1
+              },
+              {
+                "causa": "Defeito no equipamento",
+                "ocorrencias": 0
+              },
+              {
+                "causa": "Problema de alimentação",
+                "ocorrencias": 0
+              }
+            ],
+            "consequencias": [
+              "Passageiros não conseguem se comunicar",
+              "Dificuldade no atendimento"
+            ],
+            "solucaoProposta": {
+              "acaoImediata": "Manter o elevador fora de serviço se não houver outro meio de comunicação com a cabine.",
+              "passos": [
+                "Testar o interfone e a linha de comunicação",
+                "Verificar a alimentação, o microfone e o alto-falante",
+                "Reparar ou substituir o módulo de comunicação",
+                "Fazer chamada de teste com a central"
+              ],
+              "equipe": "Técnico de manutenção (comunicação)"
+            }
+          },
+          {
+            "tipoProblemaId": 14,
+            "problema": "Falha nos sensores",
+            "categoria": "Elétricos",
+            "gravidade": "Alta",
+            "descricao": "Um ou mais sensores apresentam leituras incorretas ou deixam de funcionar.",
+            "ocorrencias": 2,
+            "recorrente": false,
+            "causaMaisFrequente": "Falha de comunicação",
+            "causasPossiveis": [
+              {
+                "causa": "Falha de comunicação",
+                "ocorrencias": 1
+              },
+              {
+                "causa": "Problema elétrico",
+                "ocorrencias": 1
+              },
+              {
+                "causa": "Sensor danificado",
+                "ocorrencias": 0
+              }
+            ],
+            "consequencias": [
+              "Funcionamento irregular",
+              "Ativação de sistemas de proteção"
+            ],
+            "solucaoProposta": {
+              "acaoImediata": "Manter o elevador parado se o sensor afetado for de segurança.",
+              "passos": [
+                "Identificar o sensor com defeito pelo diagnóstico do controlador",
+                "Limpar, realinhar e verificar a cablagem do sensor",
+                "Substituir o sensor se não responder",
+                "Testar a função de segurança após a troca"
+              ],
+              "equipe": "Técnico de manutenção (eletrônica)"
+            }
+          },
+          {
+            "tipoProblemaId": 28,
+            "problema": "Falha no sistema de nivelamento",
+            "categoria": "Funcionamento",
+            "gravidade": "Alta",
+            "descricao": "O elevador apresenta dificuldade para parar corretamente no andar.",
+            "ocorrencias": 1,
+            "recorrente": false,
+            "causaMaisFrequente": "Sensor de posição defeituoso",
+            "causasPossiveis": [
+              {
+                "causa": "Sensor de posição defeituoso",
+                "ocorrencias": 1
+              },
+              {
+                "causa": "Falha no controlador",
+                "ocorrencias": 0
+              },
+              {
+                "causa": "Problema no acionamento",
+                "ocorrencias": 0
+              }
+            ],
+            "consequencias": [
+              "Desnivelamento da cabine",
+              "Risco de tropeços"
+            ],
+            "solucaoProposta": {
+              "acaoImediata": "Evitar o uso até a verificação se o desnível for grande.",
+              "passos": [
+                "Inspecionar os sensores de nivelamento e os ímãs ou chapas de andar",
+                "Recalibrar o sistema em todos os andares",
+                "Substituir sensores ou componentes com defeito",
+                "Medir o desnível em todos os pavimentos"
+              ],
+              "equipe": "Técnico de manutenção (controle)"
+            }
+          },
+          {
+            "tipoProblemaId": 8,
+            "problema": "Desnivelamento da cabine",
+            "categoria": "Mecânicos",
+            "gravidade": "Alta",
+            "descricao": "A cabine para acima ou abaixo do nível do andar.",
+            "ocorrencias": 1,
+            "recorrente": false,
+            "causaMaisFrequente": "Falha no sistema de acionamento",
+            "causasPossiveis": [
+              {
+                "causa": "Falha no sistema de acionamento",
+                "ocorrencias": 1
+              },
+              {
+                "causa": "Falha no sensor de nivelamento",
+                "ocorrencias": 0
+              },
+              {
+                "causa": "Problema no sistema de controle",
+                "ocorrencias": 0
+              }
+            ],
+            "consequencias": [
+              "Risco de tropeços e quedas",
+              "Dificuldade de entrada e saída"
+            ],
+            "solucaoProposta": {
+              "acaoImediata": "Sinalizar o degrau de piso e avisar os usuários até a correção.",
+              "passos": [
+                "Verificar o sistema de nivelamento e os sensores de andar",
+                "Conferir o freio e a tração",
+                "Recalibrar o nivelamento nos andares afetados",
+                "Medir o desnível após o ajuste"
+              ],
+              "equipe": "Técnico de manutenção (mecânica e controle)"
+            }
+          },
+          {
+            "tipoProblemaId": 10,
+            "problema": "Desgaste de rolamentos",
+            "categoria": "Mecânicos",
+            "gravidade": "Alta",
+            "descricao": "Componentes de rolamento apresentam desgaste excessivo.",
+            "ocorrencias": 1,
+            "recorrente": false,
+            "causaMaisFrequente": "Lubrificação inadequada",
+            "causasPossiveis": [
+              {
+                "causa": "Lubrificação inadequada",
+                "ocorrencias": 1
+              },
+              {
+                "causa": "Uso prolongado",
+                "ocorrencias": 0
+              },
+              {
+                "causa": "Desalinhamento",
+                "ocorrencias": 0
+              }
+            ],
+            "consequencias": [
+              "Aumento de ruídos",
+              "Vibrações",
+              "Possível falha mecânica"
+            ],
+            "solucaoProposta": {
+              "acaoImediata": "Programar a substituição antes de ocorrer travamento.",
+              "passos": [
+                "Inspecionar o estado dos rolamentos e medir ruído e temperatura",
+                "Verificar a lubrificação e o alinhamento do eixo",
+                "Substituir os rolamentos desgastados",
+                "Definir um intervalo de inspeção preventiva"
+              ],
+              "equipe": "Técnico de manutenção (mecânica)"
+            }
+          },
+          {
+            "tipoProblemaId": 25,
+            "problema": "Elevador apresenta movimentos bruscos",
+            "categoria": "Funcionamento",
+            "gravidade": "Alta",
+            "descricao": "A cabine apresenta acelerações ou desacelerações fora do padrão.",
+            "ocorrencias": 1,
+            "recorrente": false,
+            "causaMaisFrequente": "Problema no acionamento",
+            "causasPossiveis": [
+              {
+                "causa": "Problema no acionamento",
+                "ocorrencias": 1
+              },
+              {
+                "causa": "Falha no controle de velocidade",
+                "ocorrencias": 0
+              },
+              {
+                "causa": "Defeito no sistema de controle",
+                "ocorrencias": 0
+              }
+            ],
+            "consequencias": [
+              "Desconforto dos passageiros",
+              "Risco de quedas"
+            ],
+            "solucaoProposta": {
+              "acaoImediata": "Reduzir o uso e registrar quando os movimentos bruscos ocorrem.",
+              "passos": [
+                "Verificar os parâmetros de aceleração e desaceleração do controlador",
+                "Inspecionar o freio, o inversor e a tração",
+                "Ajustar o perfil de viagem",
+                "Fazer viagens de teste e avaliar o conforto"
+              ],
+              "equipe": "Técnico de manutenção (controle e mecânica)"
+            }
+          },
+          {
+            "tipoProblemaId": 23,
+            "problema": "Falha na iluminação da cabine",
+            "categoria": "Elétricos",
+            "gravidade": "Média",
+            "descricao": "A iluminação interna da cabine apresenta defeito.",
+            "ocorrencias": 1,
+            "recorrente": false,
+            "causaMaisFrequente": "Problema na alimentação",
+            "causasPossiveis": [
+              {
+                "causa": "Problema na alimentação",
+                "ocorrencias": 1
+              },
+              {
+                "causa": "Lâmpadas danificadas",
+                "ocorrencias": 0
+              },
+              {
+                "causa": "Falha no circuito",
+                "ocorrencias": 0
+              }
+            ],
+            "consequencias": [
+              "Baixa visibilidade",
+              "Desconforto dos passageiros"
+            ],
+            "solucaoProposta": {
+              "acaoImediata": "Avisar os usuários e verificar se a iluminação de emergência funciona.",
+              "passos": [
+                "Testar as lâmpadas e os drivers de iluminação",
+                "Verificar a alimentação da cabine",
+                "Substituir lâmpadas ou módulos com defeito",
+                "Registrar a troca no histórico do elevador"
+              ],
+              "equipe": "Técnico de manutenção (elétrica)"
+            }
+          }
+        ],
+        "observacao": "Relatório gerado a partir de uma simulação. As causas listadas são possibilidades do catálogo, não um diagnóstico, e as soluções são propostas gerais. Diagnóstico e reparo devem ser feitos por profissionais autorizados."
+      }
+    },
+    {
+      "id": 2,
+      "dataHora": "2026-11-17T17:19:29.696Z",
+      "elevadorId": 3,
+      "elevador": "Elevador C",
+      "config": {
+        "quantidade": 10,
+        "perfil": "estresse",
+        "categoria": null,
+        "semente": 1
+      },
+      "eventos": [
+        {
+          "numero": 1,
+          "dataHora": "2026-11-17T17:53:29.696Z",
+          "andar": 10,
+          "tipoProblemaId": 19,
+          "tipoProblema": "Falha na detecção de obstáculos",
+          "categoria": "Segurança",
+          "gravidade": "Crítica",
+          "prioritaria": true,
+          "causaSimulada": "Sensor danificado"
+        },
+        {
+          "numero": 2,
+          "dataHora": "2026-11-17T18:31:29.696Z",
+          "andar": 8,
+          "tipoProblemaId": 30,
+          "tipoProblema": "Falha no sistema de comunicação",
+          "categoria": "Elétricos",
+          "gravidade": "Alta",
+          "prioritaria": false,
+          "causaSimulada": "Problema no cabeamento"
+        },
+        {
+          "numero": 3,
+          "dataHora": "2026-11-17T19:01:29.696Z",
+          "andar": 5,
+          "tipoProblemaId": 13,
+          "tipoProblema": "Falha no painel de controle",
+          "categoria": "Elétricos",
+          "gravidade": "Alta",
+          "prioritaria": false,
+          "causaSimulada": "Defeito em componentes"
+        },
+        {
+          "numero": 4,
+          "dataHora": "2026-11-17T19:19:29.696Z",
+          "andar": 2,
+          "tipoProblemaId": 5,
+          "tipoProblema": "Elevador não atende chamadas",
+          "categoria": "Funcionamento",
+          "gravidade": "Média",
+          "prioritaria": false,
+          "causaSimulada": "Problema no controlador"
+        },
+        {
+          "numero": 5,
+          "dataHora": "2026-11-17T19:45:29.696Z",
+          "andar": 8,
+          "tipoProblemaId": 15,
+          "tipoProblema": "Falha no inversor de frequência",
+          "categoria": "Elétricos",
+          "gravidade": "Alta",
+          "prioritaria": false,
+          "causaSimulada": "Sobreaquecimento"
+        },
+        {
+          "numero": 6,
+          "dataHora": "2026-11-17T19:52:29.696Z",
+          "andar": 5,
+          "tipoProblemaId": 9,
+          "tipoProblema": "Falha no mecanismo das portas",
+          "categoria": "Mecânicos",
+          "gravidade": "Alta",
+          "prioritaria": false,
+          "causaSimulada": "Desgaste das peças"
+        },
+        {
+          "numero": 7,
+          "dataHora": "2026-11-17T20:13:29.696Z",
+          "andar": 3,
+          "tipoProblemaId": 18,
+          "tipoProblema": "Interfone de emergência não funciona",
+          "categoria": "Segurança",
+          "gravidade": "Crítica",
+          "prioritaria": true,
+          "causaSimulada": "Problema de alimentação"
+        },
+        {
+          "numero": 8,
+          "dataHora": "2026-11-17T20:59:29.696Z",
+          "andar": 2,
+          "tipoProblemaId": 20,
+          "tipoProblema": "Sobrecarga de peso",
+          "categoria": "Segurança",
+          "gravidade": "Alta",
+          "prioritaria": true,
+          "causaSimulada": "Transporte de carga acima do limite"
+        },
+        {
+          "numero": 9,
+          "dataHora": "2026-11-17T21:46:29.696Z",
+          "andar": 10,
+          "tipoProblemaId": 21,
+          "tipoProblema": "Falha no freio",
+          "categoria": "Mecânicos",
+          "gravidade": "Crítica",
+          "prioritaria": true,
+          "causaSimulada": "Falha no acionamento"
+        },
+        {
+          "numero": 10,
+          "dataHora": "2026-11-17T21:59:29.696Z",
+          "andar": 4,
+          "tipoProblemaId": 8,
+          "tipoProblema": "Desnivelamento da cabine",
+          "categoria": "Mecânicos",
+          "gravidade": "Alta",
+          "prioritaria": false,
+          "causaSimulada": "Falha no sistema de acionamento"
+        }
+      ],
+      "relatorio": {
+        "resumo": {
+          "totalEventos": 10,
+          "porGravidade": {
+            "Baixa": 0,
+            "Média": 1,
+            "Alta": 6,
+            "Crítica": 3
+          },
+          "porCategoria": {
+            "Mecânicos": 3,
+            "Elétricos": 3,
+            "Funcionamento": 1,
+            "Segurança": 3
+          },
+          "problemasDistintos": 10,
+          "problemasRecorrentes": 0,
+          "nivelRisco": "Crítico",
+          "elevadorPodeOperar": false,
+          "conclusao": "Foram detectadas falhas que colocam passageiros em risco. O elevador não deve operar até a inspeção e a correção por equipe autorizada."
+        },
+        "recomendacoes": [
+          "Retirar o elevador de operação e acionar a equipe autorizada, pois há falha crítica (RN07)."
+        ],
+        "problemas": [
+          {
+            "tipoProblemaId": 19,
+            "problema": "Falha na detecção de obstáculos",
+            "categoria": "Segurança",
+            "gravidade": "Crítica",
+            "descricao": "O sistema da porta não detecta corretamente pessoas ou objetos.",
+            "ocorrencias": 1,
+            "recorrente": false,
+            "causaMaisFrequente": "Sensor danificado",
+            "causasPossiveis": [
+              {
+                "causa": "Sensor danificado",
+                "ocorrencias": 1
+              },
+              {
+                "causa": "Falha eletrônica",
+                "ocorrencias": 0
+              },
+              {
+                "causa": "Problema de alinhamento",
+                "ocorrencias": 0
+              }
+            ],
+            "consequencias": [
+              "Risco de contato com a porta",
+              "Possibilidade de acidentes"
+            ],
+            "solucaoProposta": {
+              "acaoImediata": "Retirar o elevador de operação, pois há risco de fechamento sobre pessoas ou objetos.",
+              "passos": [
+                "Inspecionar a cortina de luz e os sensores de obstáculo",
+                "Limpar e realinhar os componentes ópticos",
+                "Substituir os sensores defeituosos",
+                "Testar com obstáculo de prova em vários andares"
+              ],
+              "equipe": "Técnico de manutenção (segurança)"
+            }
+          },
+          {
+            "tipoProblemaId": 18,
+            "problema": "Interfone de emergência não funciona",
+            "categoria": "Segurança",
+            "gravidade": "Crítica",
+            "descricao": "O sistema de comunicação de emergência apresenta defeito.",
+            "ocorrencias": 1,
+            "recorrente": false,
+            "causaMaisFrequente": "Problema de alimentação",
+            "causasPossiveis": [
+              {
+                "causa": "Problema de alimentação",
+                "ocorrencias": 1
+              },
+              {
+                "causa": "Falha de comunicação",
+                "ocorrencias": 0
+              },
+              {
+                "causa": "Defeito no equipamento",
+                "ocorrencias": 0
+              }
+            ],
+            "consequencias": [
+              "Passageiros não conseguem se comunicar",
+              "Dificuldade no atendimento"
+            ],
+            "solucaoProposta": {
+              "acaoImediata": "Manter o elevador fora de serviço se não houver outro meio de comunicação com a cabine.",
+              "passos": [
+                "Testar o interfone e a linha de comunicação",
+                "Verificar a alimentação, o microfone e o alto-falante",
+                "Reparar ou substituir o módulo de comunicação",
+                "Fazer chamada de teste com a central"
+              ],
+              "equipe": "Técnico de manutenção (comunicação)"
+            }
+          },
+          {
+            "tipoProblemaId": 21,
+            "problema": "Falha no freio",
+            "categoria": "Mecânicos",
+            "gravidade": "Crítica",
+            "descricao": "O sistema de frenagem apresenta funcionamento inadequado.",
+            "ocorrencias": 1,
+            "recorrente": false,
+            "causaMaisFrequente": "Falha no acionamento",
+            "causasPossiveis": [
+              {
+                "causa": "Falha no acionamento",
+                "ocorrencias": 1
+              },
+              {
+                "causa": "Desgaste de componentes",
+                "ocorrencias": 0
+              },
+              {
+                "causa": "Problema mecânico",
+                "ocorrencias": 0
+              }
+            ],
+            "consequencias": [
+              "Comprometimento da segurança",
+              "Necessidade de retirada de serviço"
+            ],
+            "solucaoProposta": {
+              "acaoImediata": "Retirar o elevador de operação imediatamente.",
+              "passos": [
+                "Inspecionar as pastilhas e o estado do freio",
+                "Medir o desgaste e a força de frenagem",
+                "Substituir ou ajustar as peças do freio",
+                "Testar a frenagem com carga antes de liberar"
+              ],
+              "equipe": "Equipe autorizada de manutenção (segurança)"
+            }
+          },
+          {
+            "tipoProblemaId": 30,
+            "problema": "Falha no sistema de comunicação",
+            "categoria": "Elétricos",
+            "gravidade": "Alta",
+            "descricao": "Ocorre uma falha na comunicação entre componentes eletrônicos do elevador.",
+            "ocorrencias": 1,
+            "recorrente": false,
+            "causaMaisFrequente": "Problema no cabeamento",
+            "causasPossiveis": [
+              {
+                "causa": "Problema no cabeamento",
+                "ocorrencias": 1
+              },
+              {
+                "causa": "Falha nos módulos eletrônicos",
+                "ocorrencias": 0
+              },
+              {
+                "causa": "Interferência na comunicação",
+                "ocorrencias": 0
+              }
+            ],
+            "consequencias": [
+              "Comandos não executados",
+              "Funcionamento irregular",
+              "Possível parada do elevador"
+            ],
+            "solucaoProposta": {
+              "acaoImediata": "Informar os usuários sobre o canal alternativo de comunicação.",
+              "passos": [
+                "Testar a rede e o módulo de comunicação",
+                "Verificar a alimentação e as conexões",
+                "Reconfigurar ou substituir o módulo com defeito",
+                "Validar o envio de alertas à central"
+              ],
+              "equipe": "Técnico de manutenção (comunicação)"
+            }
+          },
+          {
+            "tipoProblemaId": 13,
+            "problema": "Falha no painel de controle",
+            "categoria": "Elétricos",
+            "gravidade": "Alta",
+            "descricao": "O painel responsável pelo controle do elevador apresenta defeito.",
+            "ocorrencias": 1,
+            "recorrente": false,
+            "causaMaisFrequente": "Defeito em componentes",
+            "causasPossiveis": [
+              {
+                "causa": "Defeito em componentes",
+                "ocorrencias": 1
+              },
+              {
+                "causa": "Falha eletrônica",
+                "ocorrencias": 0
+              },
+              {
+                "causa": "Problema de alimentação",
+                "ocorrencias": 0
+              }
+            ],
+            "consequencias": [
+              "Comandos podem não funcionar",
+              "Elevador pode ficar indisponível"
+            ],
+            "solucaoProposta": {
+              "acaoImediata": "Colocar o elevador em modo seguro e registrar os códigos de falha exibidos.",
+              "passos": [
+                "Ler o histórico de falhas do painel de controle",
+                "Verificar a alimentação, conexões e placas",
+                "Atualizar ou restaurar o firmware e a configuração",
+                "Substituir a placa danificada, se for o caso"
+              ],
+              "equipe": "Técnico de manutenção (controle)"
+            }
+          },
+          {
+            "tipoProblemaId": 15,
+            "problema": "Falha no inversor de frequência",
+            "categoria": "Elétricos",
+            "gravidade": "Alta",
+            "descricao": "O equipamento responsável pelo controle do motor apresenta falha.",
+            "ocorrencias": 1,
+            "recorrente": false,
+            "causaMaisFrequente": "Sobreaquecimento",
+            "causasPossiveis": [
+              {
+                "causa": "Sobreaquecimento",
+                "ocorrencias": 1
+              },
+              {
+                "causa": "Falha eletrônica",
+                "ocorrencias": 0
+              },
+              {
+                "causa": "Problema na alimentação",
+                "ocorrencias": 0
+              }
+            ],
+            "consequencias": [
+              "Interrupção do movimento",
+              "Funcionamento irregular"
+            ],
+            "solucaoProposta": {
+              "acaoImediata": "Reduzir a carga de uso e evitar reiniciar o inversor repetidamente.",
+              "passos": [
+                "Ler os códigos de falha do inversor",
+                "Verificar a ventilação, a temperatura e as conexões de potência",
+                "Conferir os parâmetros de configuração do motor",
+                "Reparar ou substituir o inversor"
+              ],
+              "equipe": "Técnico de manutenção (elétrica)"
+            }
+          },
+          {
+            "tipoProblemaId": 9,
+            "problema": "Falha no mecanismo das portas",
+            "categoria": "Mecânicos",
+            "gravidade": "Alta",
+            "descricao": "O mecanismo responsável pela movimentação das portas apresenta defeito.",
+            "ocorrencias": 1,
+            "recorrente": false,
+            "causaMaisFrequente": "Desgaste das peças",
+            "causasPossiveis": [
+              {
+                "causa": "Desgaste das peças",
+                "ocorrencias": 1
+              },
+              {
+                "causa": "Desalinhamento",
+                "ocorrencias": 0
+              },
+              {
+                "causa": "Falha no acionamento",
+                "ocorrencias": 0
+              }
+            ],
+            "consequencias": [
+              "Portas podem não funcionar",
+              "Elevador pode ficar indisponível"
+            ],
+            "solucaoProposta": {
+              "acaoImediata": "Tirar o elevador de operação se houver risco de a porta se soltar ou prender.",
+              "passos": [
+                "Inspecionar as roldanas, guias, correias e engates das portas",
+                "Lubrificar e ajustar a folga do conjunto",
+                "Substituir as peças desgastadas ou quebradas",
+                "Testar a abertura e o fechamento em todos os andares"
+              ],
+              "equipe": "Técnico de manutenção (portas)"
+            }
+          },
+          {
+            "tipoProblemaId": 20,
+            "problema": "Sobrecarga de peso",
+            "categoria": "Segurança",
+            "gravidade": "Alta",
+            "descricao": "O peso dentro da cabine ultrapassa o limite permitido.",
+            "ocorrencias": 1,
+            "recorrente": false,
+            "causaMaisFrequente": "Transporte de carga acima do limite",
+            "causasPossiveis": [
+              {
+                "causa": "Transporte de carga acima do limite",
+                "ocorrencias": 1
+              },
+              {
+                "causa": "Excesso de passageiros",
+                "ocorrencias": 0
+              }
+            ],
+            "consequencias": [
+              "Bloqueio da movimentação",
+              "Ativação do alarme de sobrecarga"
+            ],
+            "solucaoProposta": {
+              "acaoImediata": "Orientar os passageiros a reduzir a carga e manter a porta aberta até o peso voltar ao normal.",
+              "passos": [
+                "Verificar a calibração do sensor de carga",
+                "Conferir o limite de peso configurado",
+                "Revisar o aviso sonoro e visual de sobrecarga",
+                "Orientar os usuários sobre a capacidade máxima"
+              ],
+              "equipe": "Técnico de manutenção e administração do prédio"
+            }
+          },
+          {
+            "tipoProblemaId": 8,
+            "problema": "Desnivelamento da cabine",
+            "categoria": "Mecânicos",
+            "gravidade": "Alta",
+            "descricao": "A cabine para acima ou abaixo do nível do andar.",
+            "ocorrencias": 1,
+            "recorrente": false,
+            "causaMaisFrequente": "Falha no sistema de acionamento",
+            "causasPossiveis": [
+              {
+                "causa": "Falha no sistema de acionamento",
+                "ocorrencias": 1
+              },
+              {
+                "causa": "Falha no sensor de nivelamento",
+                "ocorrencias": 0
+              },
+              {
+                "causa": "Problema no sistema de controle",
+                "ocorrencias": 0
+              }
+            ],
+            "consequencias": [
+              "Risco de tropeços e quedas",
+              "Dificuldade de entrada e saída"
+            ],
+            "solucaoProposta": {
+              "acaoImediata": "Sinalizar o degrau de piso e avisar os usuários até a correção.",
+              "passos": [
+                "Verificar o sistema de nivelamento e os sensores de andar",
+                "Conferir o freio e a tração",
+                "Recalibrar o nivelamento nos andares afetados",
+                "Medir o desnível após o ajuste"
+              ],
+              "equipe": "Técnico de manutenção (mecânica e controle)"
+            }
+          },
+          {
+            "tipoProblemaId": 5,
+            "problema": "Elevador não atende chamadas",
+            "categoria": "Funcionamento",
+            "gravidade": "Média",
+            "descricao": "O elevador não responde às chamadas realizadas nos andares.",
+            "ocorrencias": 1,
+            "recorrente": false,
+            "causaMaisFrequente": "Problema no controlador",
+            "causasPossiveis": [
+              {
+                "causa": "Problema no controlador",
+                "ocorrencias": 1
+              },
+              {
+                "causa": "Falha no painel de chamadas",
+                "ocorrencias": 0
+              },
+              {
+                "causa": "Falha de comunicação",
+                "ocorrencias": 0
+              }
+            ],
+            "consequencias": [
+              "Aumento do tempo de espera",
+              "Interrupção parcial do serviço"
+            ],
+            "solucaoProposta": {
+              "acaoImediata": "Verificar se o elevador está em modo de manutenção, inspeção ou fora de serviço.",
+              "passos": [
+                "Testar os botões de chamada de pavimento",
+                "Verificar a comunicação entre o painel de chamadas e o controlador",
+                "Reiniciar o controlador e checar falhas registradas",
+                "Validar o atendimento de chamadas em vários andares"
+              ],
+              "equipe": "Técnico de manutenção (controle)"
+            }
+          }
+        ],
+        "observacao": "Relatório gerado a partir de uma simulação. As causas listadas são possibilidades do catálogo, não um diagnóstico, e as soluções são propostas gerais. Diagnóstico e reparo devem ser feitos por profissionais autorizados."
+      }
+    }
+  ],
+  "contadores": {
+    "elevador": 4,
+    "ocorrencia": 4,
+    "historico": 4,
+    "simulacao": 3,
+    "tecnico": 5
+  },
+  "tecnicos": [
+    {
+      "id": 1,
+      "nome": "Carlos Silva",
+      "regiao": "Bloco A"
+    },
+    {
+      "id": 2,
+      "nome": "Marina Souza",
+      "regiao": "Bloco A"
+    },
+    {
+      "id": 3,
+      "nome": "Rafael Lima",
+      "regiao": "Bloco B"
+    },
+    {
+      "id": 4,
+      "nome": "fgggggg",
+      "regiao": "gdsg"
+    }
+  ]
+}

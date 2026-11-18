@@ -1,141 +1,62 @@
-# Backend do Elevador
+# Backend do MVP Otis
 
-API simples que controla a sobrecarga de peso de um elevador. Se o peso passa do limite, o elevador é travado e o alarme é ligado.
-
-## Tecnologias
-
-- JavaScript (Node.js)
-- Módulo `http` nativo do Node (sem bibliotecas externas)
-
-## Requisitos
-
-- Node.js 14 ou superior
-
-## Como rodar
+API de ocorrências de elevadores em Node.js puro (sem bibliotecas externas). Precisa de Node.js 22 ou superior.
 
 ```bash
+# 1) Backend (http://localhost:3000) – não precisa de npm install
+cd Backend
 npm start
+
+# 2) Frontend (http://localhost:5173) – em outro terminal
+cd Frontend
+npm install
+npm run dev
 ```
 
-O servidor sobe em `http://localhost:3000`.
-
-Não precisa de `npm install`, pois o projeto não usa dependências. Também dá para rodar com `node server.js`.
-
-## Configuração
-
-No topo do `server.js`:
-
-| Constante   | Descrição                    | Padrão |
-|-------------|------------------------------|--------|
-| `LIMITE_KG` | Peso máximo permitido (kg)   | 600    |
-| `PORTA`     | Porta do servidor            | 3000   |
-
-## Como funciona
-
-- Peso **dentro do limite**: status `NORMAL`, elevador liberado, alarme desligado.
-- Peso **acima do limite**: status `SOBRECARGA`, elevador travado, alarme ligado e evento salvo no histórico.
-- Quando o peso volta ao normal, o elevador é liberado automaticamente.
-
-Os dados ficam em memória. Ao reiniciar o servidor, tudo é zerado.
+Os dados ficam em `dados/db.json` (criado na primeira execução, com 3 elevadores de exemplo e o catálogo de problemas). Para zerar tudo, apague esse arquivo. Variáveis opcionais: `PORT` e `DB_FILE`.
 
 ## Rotas
 
-### `GET /elevador`
+| Método | Rota | Descrição |
+|---|---|---|
+| GET | `/problemas?categoria=` | Catálogo de problemas (RN02) |
+| GET | `/elevadores` | Lista elevadores |
+| POST | `/elevadores` | Cadastra `{ nome, localizacao, limiteKg? }` |
+| GET | `/elevadores/:id` | Detalhe do elevador |
+| POST | `/elevadores/:id/peso` | Informa `{ peso }`. Acima do limite: 409, trava, alarme e ocorrência automática |
+| POST | `/elevadores/:id/mover` | 200 se liberado, 409 se travado |
+| GET | `/elevadores/:id/historico` | Ocorrências do elevador e defeitos recorrentes (RN05) |
+| GET | `/ocorrencias` | Filtros: `elevadorId`, `gravidade`, `status`, `categoria`, `prioritarias=true` |
+| POST | `/ocorrencias` | Cria `{ elevadorId, tipoProblemaId, descricao?, gravidade? }` |
+| GET | `/ocorrencias/:id` | Detalhe com histórico de status |
+| PATCH | `/ocorrencias/:id/status` | `{ status, responsavel }` (próxima etapa apenas) |
+| POST | `/simulacoes` | Executa um teste `{ elevadorId, quantidade?, perfil?, categoria?, semente? }` e devolve eventos e relatório |
+| GET | `/simulacoes` | Lista os testes executados |
+| GET | `/simulacoes/:id` | Teste completo com relatório |
+| GET | `/dashboard` | Totais por gravidade e status, prioritárias, recorrências e sobrecargas |
 
-Retorna o estado atual do elevador.
+As rotas antigas `GET /elevador`, `POST /elevador/peso` e `POST /elevador/mover` continuam funcionando e usam o elevador 1.
 
-**Resposta (200):**
+## Regras (arquivo `regras.js`)
 
-```json
-{
-  "pesoAtual": 0,
-  "limite": 600,
-  "status": "NORMAL",
-  "podeMover": true,
-  "alarme": false,
-  "historico": []
-}
-```
+- **Gravidade:** valores `Baixa`, `Média`, `Alta`, `Crítica`. Problemas críticos do catálogo não podem ser rebaixados.
+- **Status:** `Aberta` → `Em análise` → `Em manutenção` → `Resolvida`. Pular etapa ou voltar retorna 409.
+- **Responsável:** obrigatório ao passar para `Em manutenção` e `Resolvida` (400 sem ele).
+- **Prioridade:** ocorrência crítica ou da categoria Segurança fica `prioritaria: true` e vem primeiro nas listas.
+- **Recorrência:** mesmo problema 3 ou mais vezes no mesmo elevador gera alerta.
+- **Sobrecarga:** uma única ocorrência automática ("Sobrecarga de peso") por episódio, enquanto houver uma não resolvida.
 
-### `POST /elevador/peso`
+## Simulador (arquivo `simulador.js`)
 
-Informa o peso atual do elevador.
+- `quantidade`: de 1 a 50 (padrão 10). `perfil`: `normal` ou `estresse` (favorece falhas graves). `categoria`: opcional. `semente`: inteiro opcional; a mesma semente repete o mesmo teste.
+- O teste é isolado: não cria ocorrências reais nem altera o estado dos elevadores.
+- O relatório traz `resumo` (nível de risco, contagens, conclusão), `recomendacoes`, `problemas` (causas possíveis, consequências e `solucaoProposta`) e `observacao`.
+- O catálogo `problemas.json` é recarregado a cada início do servidor, então alterações nas soluções valem após reiniciar.
 
-**Body:**
-
-```json
-{ "peso": 700 }
-```
-
-**Resposta com sobrecarga (409):**
-
-```json
-{
-  "mensagem": "Sobrecarga! Máximo 600kg. Retire 100kg",
-  "pesoAtual": 700,
-  "limite": 600,
-  "status": "SOBRECARGA",
-  "podeMover": false,
-  "alarme": true,
-  "historico": [
-    { "evento": "SOBRECARGA", "peso": 700, "data": "2026-10-30T21:09:31.939Z" }
-  ]
-}
-```
-
-**Resposta com peso ok (200):**
-
-```json
-{
-  "mensagem": "Peso ok, elevador liberado",
-  "pesoAtual": 300,
-  "limite": 600,
-  "status": "NORMAL",
-  "podeMover": true,
-  "alarme": false,
-  "historico": []
-}
-```
-
-**Erros (400):** `Peso inválido` (não é número ou é negativo) ou `JSON inválido`.
-
-### `POST /elevador/mover`
-
-Tenta mover o elevador.
-
-- **200:** `{ "mensagem": "Elevador em movimento" }`
-- **409:** `{ "erro": "Elevador travado por sobrecarga" }`
-
-## Exemplos com curl
+## Exemplo
 
 ```bash
-# Enviar um peso acima do limite
-curl -X POST http://localhost:3000/elevador/peso \
+curl -X POST http://localhost:3000/ocorrencias \
   -H "Content-Type: application/json" \
-  -d '{"peso": 700}'
-
-# Tentar mover (vai ser bloqueado)
-curl -X POST http://localhost:3000/elevador/mover
-
-# Enviar um peso normal
-curl -X POST http://localhost:3000/elevador/peso \
-  -H "Content-Type: application/json" \
-  -d '{"peso": 300}'
-
-# Ver o status
-curl http://localhost:3000/elevador
+  -d '{"elevadorId":1,"tipoProblemaId":16,"descricao":"Duas pessoas presas no 5º andar"}'
 ```
-
-## Códigos de status
-
-| Código | Significado                                  |
-|--------|----------------------------------------------|
-| 200    | Sucesso                                      |
-| 400    | Requisição inválida                          |
-| 404    | Rota não encontrada                          |
-| 409    | Conflito (sobrecarga, elevador travado)      |
-
-## Observações
-
-- O CORS está liberado (`*`) para o front-end conseguir acessar a API. Em produção, o ideal é restringir ao domínio do front.
-- O histórico guarda apenas os eventos de sobrecarga.
