@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: otis-api
+    runtime: node
+    rootDir: Backend
+    startCommand: node server.js
+    envVars:
+      - key: ORIGEM_PERMITIDA
+        value: https://SEU-FRONTEND.vercel.app
