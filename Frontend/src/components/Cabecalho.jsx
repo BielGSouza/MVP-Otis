@@ -21,7 +21,7 @@ function Cabecalho() {
       <div className="cabecalho-interno">
         <div className="line-header">
           <NavLink to="/dashboard" className="marca">
-            <span className="marca-nome">OTIS</span>
+            <span className="marca-nome">OTIS CORE</span>
             <span className="marca-sub">Gestão de ocorrências</span>
           </NavLink>
 

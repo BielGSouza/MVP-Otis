@@ -5,10 +5,10 @@
       "nome": "Elevador A",
       "localizacao": "Bloco A",
       "limiteKg": 600,
-      "pesoAtual": 87999999,
-      "status": "SOBRECARGA",
-      "podeMover": false,
-      "alarme": true
+      "pesoAtual": 585,
+      "status": "NORMAL",
+      "podeMover": true,
+      "alarme": false
     },
     {
       "id": 2,
